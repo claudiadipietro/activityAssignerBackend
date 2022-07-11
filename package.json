@@ -1,0 +1,31 @@
+{
+  "name": "activityassignerbackend",
+  "version": "1.0.0",
+  "description": "A web that assigns tasks for you",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiadipietro/activityAssignerBackend.git"
+  },
+  "author": "Claudia Di Pietro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/claudiadipietro/activityAssignerBackend/issues"
+  },
+  "homepage": "https://github.com/claudiadipietro/activityAssignerBackend#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^6.4.4",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.5",
+    "validator": "^13.7.0"
+  }
+}

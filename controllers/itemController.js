@@ -9,6 +9,7 @@ const controller = {
     
     if (validate_item) {
       item.item = request.body.item;
+      item.taskStatus = false;
     }
 
     item.save((error, itemStored) => {
@@ -61,7 +62,23 @@ const controller = {
         item: itemRemoved
     });
   });
-}
-
+},
+  updateTaskStatus: function (request, response){
+    const itemID = request.params.id;
+    const update = {
+      taskStatus: true
+    }
+    Item.findOneAndUpdate({_id: itemID}, update, {new:true}, (error, itemUpdated) => {
+      if (error){
+        response.status(500).send({
+          message: 'Error updating item'
+        });
+      }
+      return response.status(200).send({
+        status: 'success',
+        item: itemUpdated
+      })
+    });
+  }
 };
 export default controller;
